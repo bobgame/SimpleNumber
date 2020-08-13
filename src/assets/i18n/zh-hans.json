@@ -1,0 +1,13 @@
+{
+  "common": {
+    "ok": "Ok",
+    "back": "Back",
+    "home": "Home",
+    "play": "Play",
+    "settings": "Settings",
+    "help": "Help"
+  },
+  "guess": {
+
+  }
+}
