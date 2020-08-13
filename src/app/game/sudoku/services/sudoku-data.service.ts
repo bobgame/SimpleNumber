@@ -6,6 +6,7 @@ import { CelShowTime } from 'src/units/get-time'
 import { StorageService } from 'src/app/common/services/storage.service'
 import { SUDOKU_SAVE } from '../enum/sudoku-save.enum'
 import { AllService, StarData } from 'src/app/common/services/all.service'
+import { Rand } from 'src/units/Rand'
 
 @Injectable({
   providedIn: 'root'
@@ -227,7 +228,7 @@ export class SudokuDataService {
   creatThird(i: number, j: number, sudoArr: Array<number>) {
     // 为对角线上的三个三宫格随机生成。
     const sortedNumArr = this.numArr.slice().sort(function () {
-      return Math.random() > 0.5 ? -1 : 1
+      return Rand() > 0.5 ? -1 : 1
     })
     const centerNum = i * 10 + j
     /***********
@@ -313,7 +314,7 @@ export class SudokuDataService {
   }
   // 生成随机正整数
   getRandom(n: number): number {
-    return Math.floor(Math.random() * n + 1)
+    return Math.floor(Rand() * n + 1)
   }
   // 获取空格相关空格
   getRelatedIndex(index: number) {

@@ -26,23 +26,10 @@ export class SudokuPlayComponent implements OnInit, OnDestroy {
 
   constructor(
     private d: SudokuDataService,
-    // private router: Router,
-    // private lanService: LanService,
-    // private events: Events,
   ) {
     this.starArr = this.d.starArr
     this.sudokuData = this.d.sudokuData
     this.sudokuShowData = this.d.sudokuShowData
-
-
-    // this.endSubscription = this.router.events.pipe(
-    //   filter(event => event instanceof NavigationEnd)
-    // ).subscribe((event) => {
-    //   console.log('End Subscription, Time: ' + this.d.sudokuShowData.showTime, event)
-    //   this.sudoPlay.playId = Math.floor(Math.random() * 1000)
-    //   this.pauseShowTime()
-    // })
-
   }
 
   ngOnInit() {

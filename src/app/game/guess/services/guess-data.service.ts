@@ -6,6 +6,8 @@ import { objCopy } from 'src/units/ObjCopy'
 import { CelShowTime } from 'src/units/get-time'
 import { StorageService } from 'src/app/common/services/storage.service'
 import { AllService } from 'src/app/common/services/all.service'
+import { HARDMODE } from 'src/app/game/guess/enum/guess-hardmode.enum'
+import { Rand, Sample } from 'src/units/Rand'
 
 @Injectable({
   providedIn: 'root'
@@ -105,13 +107,13 @@ export class GuessDataService {
     this.guessData.star = this.STAR_MAX
     const tempNums = []
     for (let i = 0; i < 99999; i++) {
-      const num = allNums[Math.floor(Math.random() * allNums.length)].toString()
+      const num = Sample(allNums).toString()
       if (!tempNums.includes(num)) {
         tempNums.push(num)
         if (tempNums.length >= len) { break }
       }
     }
-    console.log(tempNums)
+    // console.log(tempNums)
     this.guessData.number = tempNums
     this.startShowTime()
   }

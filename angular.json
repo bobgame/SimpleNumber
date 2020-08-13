@@ -24,11 +24,6 @@
               "glob": "**/*",
               "input": "src/assets",
               "output": "assets"
-            },
-            {
-              "glob": "**/*.svg",
-              "input": "node_modules/ionicons/dist/ionicons/svg",
-              "output": "./svg"
             }],
             "styles": [
             {
@@ -120,25 +115,9 @@
           "options": {
             "tsConfig": [
               "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "app:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "app:serve:production"
-            },
-            "ci": {
-              "devServerTarget": "app:serve:ci"
-            }
           }
         },
         "ionic-cordova-build": {
@@ -169,7 +148,10 @@
     }
   },
   "cli": {
-    "defaultCollection": "@ionic/angular-toolkit"
+    "defaultCollection": "@ionic/angular-toolkit",
+    "warnings": {
+      "versionMismatch": false
+    }
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {
