@@ -1,0 +1,7 @@
+{
+  "name": "SimpleNumber",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
