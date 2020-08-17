@@ -4,7 +4,7 @@ import { IonicModule } from '@ionic/angular'
 import { FormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
 
-import { HomeComponent } from './home.component'
+import { PreLoadComponent } from './pre-load.component'
 import { CommonUiModule } from '../modules/common-ui-module'
 import { TranslationModule } from '../modules/translation.module'
 
@@ -18,10 +18,10 @@ import { TranslationModule } from '../modules/translation.module'
     RouterModule.forChild([
       {
         path: '',
-        component: HomeComponent
+        component: PreLoadComponent
       }
     ])
   ],
-  declarations: [HomeComponent]
+  declarations: [PreLoadComponent]
 })
-export class HomeModule { }
+export class PreLoadModule { }

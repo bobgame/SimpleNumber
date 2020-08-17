@@ -15,18 +15,16 @@ import {
   animations: [
     trigger('flyInOut', [
       state('in', style({
-        transform: 'scale(1) translateY(0)',
         opacity: '1',
       })),
       transition('void => *', [
         style({
-          transform: 'scale(2) translateY(10%)',
           opacity: '0',
         }),
-        animate(300)
+        animate(800)
       ]),
       transition('* => void', [
-        animate(300, style({ transform: 'scale(0.5)' }))
+        animate(800, style({ opacity: '0' }))
       ]),
     ]),
   ],
