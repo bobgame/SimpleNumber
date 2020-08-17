@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouteReuseStrategy } from '@angular/router'
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular'
 import { SplashScreen } from '@ionic-native/splash-screen/ngx'
@@ -20,6 +21,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http'
   imports: [
     BrowserModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -29,7 +31,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http'
       isolate: false
     }),
     IonicModule.forRoot(),
-    AppRoutingModule],
+    AppRoutingModule
+  ],
+  exports: [
+    BrowserAnimationsModule,
+  ],
   providers: [
     StatusBar,
     SplashScreen,
